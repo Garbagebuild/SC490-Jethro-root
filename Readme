@@ -5,7 +5,8 @@
 #########################################################
 
 # -------- Step 0: Set up ADB & Fastboot --------
-# Download Platform Tools: https://developer.android.com/studio/releases/platform-tools
+# Download Platform Tools: 
+https://developer.android.com/studio/releases/platform-tools
 # Extract to e.g., C:\platform-tools
 # Open terminal in that folder
 adb version
