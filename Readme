@@ -7,11 +7,11 @@
 # -------- Step 0: Set up ADB & Fastboot --------
 # Download Platform Tools: 
 https://developer.android.com/studio/releases/platform-tools
+#Download this very important zip for root > https://github.com/Garbagebuild/SC490-Jethro-root/releases
 # Extract to e.g., C:\platform-tools
 # Open terminal in that folder
 adb version
 fastboot version
-Download this zip, it is what you need to root. 
 # -------- Step 1: Enable Developer Options & USB Debugging --------
 # On your phone:
 # Settings → System → About Phone → Tap Build Number 7x
