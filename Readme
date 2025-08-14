@@ -37,7 +37,7 @@ VOLUME_DOWN is OK.
 
 # Connect phone to computer via USB
 
-# -------- Step 3: Unlock Bootloader (Optional/Risky) --------
+# -------- Step 3: Unlock Bootloader --------
 fastboot oem unlock
 # WARNING: This will likely wipe your data!
 
