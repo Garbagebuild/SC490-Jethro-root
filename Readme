@@ -1,7 +1,7 @@
 #########################################################
 # Jethro SC490 Root & TWRP Installation Script
 # Requirements: SC490, USB cable, computer with ADB/Fastboot
-# WARNING: Unlocking bootloader may erase your data!
+# WARNING: Unlocking bootloader WILL erase your data!
 #########################################################
 
 # -------- Step 0: Set up ADB & Fastboot --------
@@ -11,7 +11,7 @@ https://developer.android.com/studio/releases/platform-tools
 # Open terminal in that folder
 adb version
 fastboot version
-
+Download this zip, it is what you need to root. 
 # -------- Step 1: Enable Developer Options & USB Debugging --------
 # On your phone:
 # Settings → System → About Phone → Tap Build Number 7x
