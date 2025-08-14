@@ -19,7 +19,19 @@ Download this zip, it is what you need to root.
 
 # -------- Step 2: Boot into Fastboot Mode --------
 # Power down fully (or remove battery if removable)
-# Hold Volume Up + Power button until white text screen appears
+# Hold Volume Up + Power button until this appears
+===========================
+       Select Boot Mode
+===========================
+ 
+  [Recovery Mode
+  [Fastboot Mode
+  [Normal Boot
+===========================
+Use VOLUME_UP to select.
+VOLUME_DOWN is OK.
+===========================
+
 # Press Volume Up once, then select Fastboot with Volume Down
 
 # Connect phone to computer via USB
@@ -32,12 +44,22 @@ fastboot oem unlock
 # Replace paths with the actual paths of your files
 fastboot flash boot "E:\path\to\boot.img"
 fastboot flash recovery "E:\path\to\recovery.img"
-
-# Reboot into Fastboot menu again (hold Volume Up)
 fastboot reboot
+Hold volume up + power button as it is booting
 
 # -------- Step 5: Use TWRP Recovery --------
-# Boot into TWRP from menu
+# Boot into TWRP from menu using volume down when you are in the
+===========================
+       Select Boot Mode
+===========================
+ 
+  [Recovery Mode
+  [Fastboot Mode
+  [Normal Boot
+===========================
+Use VOLUME_UP to select.
+VOLUME_DOWN is OK.
+===========================
 # Push Magisk database to phone
 adb push "E:\path\to\magisk.db" /data/data/adb/
 
