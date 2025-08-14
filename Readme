@@ -1,13 +1,50 @@
-requiements a  jethro phone, a computer and, or an android phone that can install apps.  (chat gpt add how to get adb and fastboot)
-On your Jethro SC490 go to settings, scroll to the bottom and click system.  go to the bottom and click about phone. 
-Again go to the very bottom and click build number 7 times or as many as it takes to make you feel good about this.  Go back to settings>system> scroll down until you see developer options.  Click developer options,
-scroll down until you see oem unlock.  Enable oem unlocking.  scroll down again and looks for adb debugging, enable it.
-power your phone down by holding the power button for too long.  until it says "Do you want to power down your phone" click cancel.  Than take the back of your phone off 
-and remove you battery.  Or click ok and power down your phone. once your phone has powered down fully,
-hold the volume up button as well as holding the power button (The big red button)...once a bunch of white text come up about recovery fastboot and normal boot, click up ONCE then click down as many times as you want.
-now you are in fastboot mode yay.  use fastboot oem unlock. now... 
- Download this    ...go to where you downloaded it , right click on boot.img and select copy as path.  now go back into fastboot and use fastboot flash boot E:/your/boot.img-PATH make sure you put the path at the end.
-Now right click recovery.img and select copy as path.  Than use fastboot flash recovery E:/my/recovery.img-PATH make sure you use the correct path.  once it is finished use fastboot reboot and hold your finger on 
-the volume up button while you press enter for that comand it should boot back into the screen with recovery, fastboot, and normal boot.  This time just press down once.
-after twrp has booted download this than copy its path like before. than go into your terminal and use adb push E:/path/to/magisk.db /data/data/adb/ now use adb reboot stay in the adb terminal
-on your computer.  once your phone has rebooted use adb shell it should givee you a $ sign use this simple command su ...if it gives you a # than congrats.
+#########################################################
+# Jethro SC490 Root & TWRP Installation Script
+# Requirements: SC490, USB cable, computer with ADB/Fastboot
+# WARNING: Unlocking bootloader may erase your data!
+#########################################################
+
+# -------- Step 0: Set up ADB & Fastboot --------
+# Download Platform Tools: https://developer.android.com/studio/releases/platform-tools
+# Extract to e.g., C:\platform-tools
+# Open terminal in that folder
+adb version
+fastboot version
+
+# -------- Step 1: Enable Developer Options & USB Debugging --------
+# On your phone:
+# Settings → System → About Phone → Tap Build Number 7x
+# Settings → System → Developer Options → Enable "OEM Unlocking" & "ADB Debugging"
+
+# -------- Step 2: Boot into Fastboot Mode --------
+# Power down fully (or remove battery if removable)
+# Hold Volume Up + Power button until white text screen appears
+# Press Volume Up once, then select Fastboot with Volume Down
+
+# Connect phone to computer via USB
+
+# -------- Step 3: Unlock Bootloader (Optional/Risky) --------
+fastboot oem unlock
+# WARNING: This will likely wipe your data!
+
+# -------- Step 4: Flash Boot & Recovery Images --------
+# Replace paths with the actual paths of your files
+fastboot flash boot "E:\path\to\boot.img"
+fastboot flash recovery "E:\path\to\recovery.img"
+
+# Reboot into Fastboot menu again (hold Volume Up)
+fastboot reboot
+
+# -------- Step 5: Use TWRP Recovery --------
+# Boot into TWRP from menu
+# Push Magisk database to phone
+adb push "E:\path\to\magisk.db" /data/data/adb/
+
+# Reboot phone from TWRP
+adb reboot
+
+# -------- Step 6: Test Root Access --------
+adb shell
+su
+# If prompt changes from $ to #, root is successful!
+#########################################################
