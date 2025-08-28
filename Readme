@@ -41,9 +41,8 @@ VOLUME_DOWN is OK.
 fastboot oem unlock
 # WARNING: This will likely wipe your data!
 
-# -------- Step 4: Flash Boot & Recovery Images --------
+# -------- Step 4: Flash Recovery Image --------
 # Replace paths with the actual paths of your files
-fastboot flash boot "E:\path\to\boot.img"
 fastboot flash recovery "E:\path\to\recovery.img"
 fastboot reboot
 Hold volume up + power button as it is booting
@@ -61,8 +60,11 @@ Hold volume up + power button as it is booting
 Use VOLUME_UP to select.
 VOLUME_DOWN is OK.
 ===========================
+#install magisk zip
+adb push path-to/magisk-v29.0.zip /sdcard/magisk-v29.0.zip
+asb shell twrp install /sdcard/magisk-v29.0.zip
 # Push Magisk database to phone
-adb push "E:\path\to\magisk.db" /data/data/adb/
+adb push "E:\path\to\magisk.db" /data/adb/
 
 # Reboot phone from TWRP
 adb reboot
